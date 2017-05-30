@@ -1,6 +1,6 @@
 # README
 
 # 301270671 Mingda Yang (Alex)
-# 301220487 Lau Hiu Ching (Canny)
-# 301215848 Zhen WANG
-# 301256564 yu ji wang
+# 301220487 Hiu Ching Lau (Canny)
+# 301215848 Zhen Wang (Ricky)
+# 301256564 Yu Ji Wang (Terry)
