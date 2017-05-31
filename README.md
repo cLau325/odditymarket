@@ -4,4 +4,4 @@
 # 301220487 Hiu Ching Lau (Canny)
 # 301215848 Zhen Wang (Ricky)
 # 301256564 Yu Ji Wang (Terry)
-# 301144006 Cheng Ho Yeh (Ton)
+# 301144006 Cheng Ho Yeh (Tony)
