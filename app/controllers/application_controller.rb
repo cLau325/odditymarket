@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   end 
   
   def welcome
-    render html: "Welcome to Oddity Market!"
+    render html: "Welcome to the Oddity Market!"
   end
 end
