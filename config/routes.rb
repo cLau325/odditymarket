@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   # root 'application#hello'
   root 'application#welcome'
+  get '/signup', to: 'users#new'
 end
