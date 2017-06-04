@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OdditMarket</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to "OddityMarket", '#', id: "logo" %> 
+    <nav>
+      <ul> 
+        <li><%=link_to"Home", '#'%></li> 
+        <li><%=link_to"Help", '#'%></li> 
+        <li><%=link_to"Contact", '#'%></li> 
+        <li><%=link_to"Support", '#'%></li> 
+        <li><%= link_to "Log in", '#' %></li>
+      </ul> 
+    </nav>
+  </body>
+</html>
