@@ -1,0 +1,8 @@
+<% @disprod.each do |i| %>
+<h2>
+  <%= link_to i.dp_name, i %>
+</h2>
+
+<% end %>
+
+<%= link_to "New", new_disprod_path, class: "btn btn-default" %>

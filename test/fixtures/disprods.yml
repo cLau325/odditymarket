@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dp_name: MyString
+  desc: MyText
+  dis_prod_id: 1
+
+two:
+  dp_name: MyString
+  desc: MyText
+  dis_prod_id: 1

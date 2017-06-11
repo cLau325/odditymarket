@@ -1,0 +1,12 @@
+<% provide(:title, @disprod.dp_name) %>
+<%= image_tag @disprod.image.url(:medium, class: "item_image") %>
+<h1><%= @disprod.dp_name %></h1>
+
+<p>
+  <%= @disprod.desc %>
+</p>
+
+
+<%= link_to "back", root_path, class: "btn btn-default" %>
+<%= link_to "Edit", edit_disprod_path, class: "btn btn-default" %>
+<%= link_to "Delete", disprod_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>

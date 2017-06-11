@@ -1,0 +1,26 @@
+<div class="New Product Form">
+
+<%= form_for @disprod do |i| %>
+  <%= render "disprods/error_messages" %>
+
+  <div class="panel-body">
+      <p>
+      <%= i.label :dp_name, "Product Name" %>
+      <%= i.text_field :dp_name, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :desc, "Description" %>
+      <%= i.text_area :desc, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :image, "Upload Image" %>
+      <%= i.file_field :image, class: 'form-control' %>
+      </p>
+  </div>
+  <%= i.submit "confirm", class: "btn btn-primary" %>
+  
+<% end %>
+
+</div>

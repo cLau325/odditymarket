@@ -18,7 +18,10 @@
         <li><%=link_to"Contact", contact_path%></li> 
         <li><%=link_to"Support", '#'%></li> 
         <li><%= link_to "Log in", '#' %></li>
+        <li><%= link_to "Display", display_path %></li>
       </ul> 
     </nav>
+    
+    <%= yield %>
   </body>
 </html>
