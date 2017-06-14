@@ -12,11 +12,6 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
   
-  
   get '/display', to: 'disprods#index'
-  
-  # sales part
-  get '/sale', to: 'sales_part#forSale'
-  get '/auction', to: 'sales_part#forAuction'
   
 end
