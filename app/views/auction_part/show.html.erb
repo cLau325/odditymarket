@@ -1,0 +1,6 @@
+%h1 @auction_part.title
+%p= @auction_part.description
+
+= link_to "Back", root_path, class: "btn btn-default"
+= link_to "Edit", auction_part_path, class: "btn btn-default"
+= link_to "Delete", auction_part_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"

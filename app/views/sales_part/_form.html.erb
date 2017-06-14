@@ -1,0 +1,14 @@
+= simple_form_for @sales_part, html: { multipart: true} do |f|
+  - if @sales_part.errors.any?
+      #errors
+        %p
+          = @sales_part.errors.count
+          Prevent this auction item from saving
+        %ul
+          - @sales_part.errors.full_messages.each do |msg|
+            %li= msg
+    .panel-body
+      = f.input :title, input_html: { class: 'form-control' }
+      = f.input :description, input_html: { class: 'form-control' }
+    
+    = f.button :submit, class: "btn btn-primary"

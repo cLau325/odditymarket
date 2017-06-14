@@ -1,0 +1,2 @@
+class SaleItem < ApplicationRecord
+end

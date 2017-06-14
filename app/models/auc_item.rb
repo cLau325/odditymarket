@@ -1,0 +1,2 @@
+class AucItem < ApplicationRecord
+end
