@@ -15,7 +15,9 @@ class SalesPartController < ApplicationController
   def create
     @sales_part = Sales_part.new(sales_part_params)
     if @sales_part.save
-      redirect_to @sales_part, notice: "Successfully Created"
+      #redirect_to @sales_part, notice: "Successfully Created"
+      flash[:success] = "Successfully created"
+      redirect_to @disprod
     else
       render 'new'
     end
@@ -34,7 +36,9 @@ class SalesPartController < ApplicationController
   
   def destroy
     @sales_part.destroy
-    redirect_to root_path, notice: "Successfully Deleted"
+    #redirect_to root_path, notice: "Successfully Deleted"
+    flash[:success] = "Successfully deleted"
+    redirect_to @sales_part
   end
   
   private

@@ -15,7 +15,9 @@ class AuctionPartController < ApplicationController
   def create
     @auction_part = Auction_part.new(auction_part_params)
     if @auction_part.save
-      redirect_to @auction_part, notice: "Successfully Created"
+      #redirect_to @auction_part, notice: "Successfully Created"
+      flash[:success] = "Successfully created"
+      redirect_to @disprod
     else
       render 'new'
     end
@@ -34,7 +36,9 @@ class AuctionPartController < ApplicationController
   
   def destroy
     @auction_part.destroy
-    redirect_to root_path, notice: "Successfully Deleted"
+    #redirect_to root_path, notice: "Successfully Deleted"
+    flash[:success] = "Successfully deleted"
+    redirect_to @sales_part
   end
   
   private
