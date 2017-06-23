@@ -1,0 +1,32 @@
+<div class="New Product Form">
+
+<%= form_for @forauction do |i| %>
+  <%= render "forauction/error_messages" %>
+
+  <div class="panel-body">
+      <p>
+      <%= i.label :fa_name, "Product Name" %>
+      <%= i.text_field :fa_name, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :fa_desc, "Description" %>
+      <%= i.text_area :fa_desc, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :fa_image, "Upload Image" %>
+      <%= i.file_field :fa_image, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :fa_baseprice, "Enter Base Price" %>
+      <%= i.file_field :fa_baseprice, class: 'form-control' %>
+      </p>
+      
+  </div>
+  <%= i.submit "confirm", class: "btn btn-primary" %>
+  
+<% end %>
+
+</div>

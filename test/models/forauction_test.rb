@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AuctionPartControllerTest < ActionDispatch::IntegrationTest
+class ForauctionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

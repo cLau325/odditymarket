@@ -1,0 +1,8 @@
+<% @forsale.each do |i| %>
+<h2>
+  <%= link_to i.fs_name, i %>
+</h2>
+
+<% end %>
+
+<%= link_to "New", new_forsale_path, class: "btn btn-default" %>

@@ -1,0 +1,32 @@
+<div class="New Product Form">
+
+<%= form_for @forsale do |i| %>
+  <%= render "forsale/error_messages" %>
+
+  <div class="panel-body">
+      <p>
+      <%= i.label :fs_name, "Product Name" %>
+      <%= i.text_field :fs_name, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :fs_desc, "Description" %>
+      <%= i.text_area :fs_desc, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :fs_image, "Upload Image" %>
+      <%= i.file_field :fs_image, class: 'form-control' %>
+      </p>
+      
+      <p>
+      <%= i.label :fs_price, "Enter Price" %>
+      <%= i.file_field :fs_baseprice, class: 'form-control' %>
+      </p>
+      
+  </div>
+  <%= i.submit "confirm", class: "btn btn-primary" %>
+  
+<% end %>
+
+</div>

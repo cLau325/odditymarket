@@ -1,0 +1,12 @@
+<% provide(:title, @forauction.fa_name) %>
+<%= image_tag @forauction.fa_image.url(:medium, class: "item_image") %>
+<h1><%= @forauction.fa_name %></h1>
+
+<p>
+  <%= @forauction.fa_desc %>
+</p>
+
+
+<%= link_to "back", root_path, class: "btn btn-default" %>
+<%= link_to "Edit", edit_forauction_path, class: "btn btn-default" %>
+<%= link_to "Delete", forauction_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>

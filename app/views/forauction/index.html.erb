@@ -1,0 +1,8 @@
+<% @forauction.each do |i| %>
+<h2>
+  <%= link_to i.fa_name, i %>
+</h2>
+
+<% end %>
+
+<%= link_to "New", new_forauction_path, class: "btn btn-default" %>

@@ -1,0 +1,12 @@
+<% provide(:title, @forsale.fs_name) %>
+<%= image_tag @forsale.fs_image.url(:medium, class: "item_image") %>
+<h1><%= @forsale.fs_name %></h1>
+
+<p>
+  <%= @forsale.fs_desc %>
+</p>
+
+
+<%= link_to "back", root_path, class: "btn btn-default" %>
+<%= link_to "Edit", edit_forsale_path, class: "btn btn-default" %>
+<%= link_to "Delete", forsale_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>

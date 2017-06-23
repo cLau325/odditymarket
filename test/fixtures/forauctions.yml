@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fa_name: MyString
+  fa_desc: 
+  fa_image: 
+  fa_baseprice: 1
+
+two:
+  fa_name: MyString
+  fa_desc: 
+  fa_image: 
+  fa_baseprice: 1

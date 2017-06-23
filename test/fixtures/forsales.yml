@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fs_name: MyString
+  fs_desc: 
+  fs_image: 
+  fs_price: 1
+
+two:
+  fs_name: MyString
+  fs_desc: 
+  fs_image: 
+  fs_price: 1

@@ -1,0 +1,12 @@
+<% if @forauction.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@forauction.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @forauction.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
