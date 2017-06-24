@@ -2,12 +2,12 @@
 
 one:
   fa_name: MyString
-  fa_desc: 
-  fa_image: 
+  fa_desc: MyText
+  fa_image: MyString
   fa_baseprice: 1
 
 two:
   fa_name: MyString
-  fa_desc: 
-  fa_image: 
+  fa_desc: MyText
+  fa_image: MyString
   fa_baseprice: 1

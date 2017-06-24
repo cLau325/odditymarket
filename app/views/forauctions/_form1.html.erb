@@ -1,7 +1,7 @@
 <div class="New Product Form">
 
 <%= form_for @forauction do |i| %>
-  <%= render "forauction/error_messages" %>
+  <%= render "forauctions/error_messages" %>
 
   <div class="panel-body">
       <p>
@@ -21,8 +21,8 @@
       
       <p>
       <%= i.label :fa_baseprice, "Enter Base Price" %>
-      <%= i.file_field :fa_baseprice, class: 'form-control' %>
-      </p>
+      <%= i.text_area :fa_baseprice, class: 'form-control' %>
+      </p>     
       
   </div>
   <%= i.submit "confirm", class: "btn btn-primary" %>

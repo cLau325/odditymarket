@@ -1,12 +1,10 @@
 <% provide(:title, @forauction.fa_name) %>
-<%= image_tag @forauction.fa_image.url(:medium, class: "item_image") %>
+<%= image_tag @forauction.image.url(:medium, class: "item_image") %>
 <h1><%= @forauction.fa_name %></h1>
-
+<h1><%= @forauction.fa_baseprice %></h1>
 <p>
   <%= @forauction.fa_desc %>
 </p>
-
-<h1><%= @forauction.fa_baseprice %></h1>
 
 
 <%= link_to "back", root_path, class: "btn btn-default" %>

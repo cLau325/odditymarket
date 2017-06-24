@@ -1,4 +1,4 @@
-class ForauctionController < ApplicationController
+class ForauctionsController < ApplicationController
   
     before_action :find_auction, only:[:show, :edit, :update, :destroy]
     
@@ -18,7 +18,7 @@ class ForauctionController < ApplicationController
         @forauction = Forauction.new(forauction_params)
         
         if @forauction.save
-          flash[:success] = "Successfully Created."
+          flash[:success] = "Successfully Created"
           redirect_to @forauction
         else
           render 'new'

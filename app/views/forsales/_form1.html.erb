@@ -1,7 +1,7 @@
 <div class="New Product Form">
 
 <%= form_for @forsale do |i| %>
-  <%= render "forsale/error_messages" %>
+  <%= render "forsales/error_messages" %>
 
   <div class="panel-body">
       <p>
@@ -21,8 +21,8 @@
       
       <p>
       <%= i.label :fs_price, "Enter Price" %>
-      <%= i.file_field :fs_baseprice, class: 'form-control' %>
-      </p>
+      <%= i.text_area :fs_price, class: 'form-control' %>
+      </p>     
       
   </div>
   <%= i.submit "confirm", class: "btn btn-primary" %>

@@ -1,5 +1,5 @@
-class ForsaleController < ApplicationController
-  
+class ForsalesController < ApplicationController
+    
     before_action :find_sale, only:[:show, :edit, :update, :destroy]
     
     def index
@@ -39,7 +39,7 @@ class ForsaleController < ApplicationController
     
     def destroy
         @forsale.destroy
-        flash[:success] = "Successfully Deleted."
+        flash[:success] = "Successfully Deleted"
         redirect_to @forsale
     end
     
@@ -53,5 +53,5 @@ class ForsaleController < ApplicationController
     def find_sale
         @forsale = Forsale.find(params[:id])
     end
-  
+
 end

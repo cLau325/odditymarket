@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :disprods
-  resources :forsale
-  resources :forauction
+  resources :forsales
+  resources :forauctions
  
   root 'static_pages#home'
   get 'users/new'
@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
   get '/display', to: 'disprods#index'
-  get '/auction', to: 'forauction#index'
-  get '/sale', to: 'forsale#index'
+  get '/forauction', to: 'forauctions#index'
+  get '/forsale', to: 'forsales#index'
 end
