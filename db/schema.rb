@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20170626215938) do
 
+  create_table "auc_items", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "Price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "disprods", force: :cascade do |t|
     t.string   "dp_name"
     t.text     "desc"
@@ -48,5 +57,6 @@ ActiveRecord::Schema.define(version: 20170626215938) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
 end
