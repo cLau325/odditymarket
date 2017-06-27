@@ -7,6 +7,7 @@ end
 
 
 gem 'rails',          '5.0.1'
+gem 'bcrypt',         '3.1.11'
 gem "paperclip", "  ~> 5.0.0"
 gem 'puma',           '3.4.0'
 gem 'sass-rails',     '5.0.6'
