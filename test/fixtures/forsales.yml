@@ -3,11 +3,9 @@
 one:
   fs_name: MyString
   fs_desc: MyText
-  fs_image: MyString
   fs_price: 1
 
 two:
   fs_name: MyString
   fs_desc: MyText
-  fs_image: MyString
   fs_price: 1

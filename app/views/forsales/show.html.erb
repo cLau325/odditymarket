@@ -1,5 +1,5 @@
 <% provide(:title, @forsale.fs_name) %>
-<%= image_tag @forsale.image.url(:medium, class: "item_image") %>
+<%= image_tag @forsale.fs_image.url(:medium, class: "item_image") %>
 <h1><%= @forsale.fs_name %></h1>
 <h1><%= @forsale.fs_price %></h1>
 <p>

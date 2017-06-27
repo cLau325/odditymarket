@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627025846) do
+ActiveRecord::Schema.define(version: 20170627062741) do
 
   create_table "disprods", force: :cascade do |t|
     t.string   "dp_name"
@@ -27,19 +27,25 @@ ActiveRecord::Schema.define(version: 20170627025846) do
   create_table "forauctions", force: :cascade do |t|
     t.string   "fa_name"
     t.text     "fa_desc"
-    t.string   "fa_image"
     t.integer  "fa_baseprice"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "fa_image_file_name"
+    t.string   "fa_image_content_type"
+    t.integer  "fa_image_file_size"
+    t.datetime "fa_image_updated_at"
   end
 
   create_table "forsales", force: :cascade do |t|
     t.string   "fs_name"
     t.text     "fs_desc"
-    t.string   "fs_image"
     t.integer  "fs_price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "fs_image_file_name"
+    t.string   "fs_image_content_type"
+    t.integer  "fs_image_file_size"
+    t.datetime "fs_image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
