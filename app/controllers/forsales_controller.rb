@@ -7,7 +7,7 @@ class ForsalesController < ApplicationController
     end
     
     def show
-        
+        @forsale = Forsale.find(params[:id])
     end
     
     def new

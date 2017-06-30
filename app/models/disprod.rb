@@ -1,4 +1,6 @@
 class Disprod < ApplicationRecord
-   has_attached_file :image, styles: { :medium => "400x400#"}
+   validates :dp_name, presence: true,length: { maximum: 20 }, uniqueness:{case_sensitive: false }
+   validates :desc, :image, presence: true 
+   has_attached_file :image, styles: { :medium => ["400x400#", :jpg, :png ] }
    validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
