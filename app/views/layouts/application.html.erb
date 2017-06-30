@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,88 +18,43 @@
   </head>
 
   <body>
-    
     <nav class="navbar navbar-inverse bg-inverse  navbar-toggleable-sm" role="navigation">
-    <button class=" navbar navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-lablel="toggle navigation">
-    <span class="navbar-toggler-icon"></span></button>
-
-    <%= link_to "OddityMarket", root_path, class: 'navbar-brand' %> 
-
-    <div class="collapse navbar-collapse justify-content-end " id="mainNav">
-        <div class="navbar-nav">
-            <%= link_to( "Home", root_path, class: 'nav-item nav-link')%>-->
-            <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>-->
-            <%= link_to "Contact", contact_path,  class: 'nav-item nav-link '%>
-            <%= link_to "Sign Up", signup_path,  class: 'nav-item nav-link '%>
-            <%= link_to "Support", support_path,  class: 'nav-item nav-link '%>   
-           <% if logged_in? %>
-              <li><%= link_to "Users", '#' %></li>
-              <li><%= link_to "Profile", current_user %></li> 
-              <li><%= link_to "Settings", '#' %></li>
-              <li><%= link_to "Log out", logout_path, method: "delete" %> </li>
-            <% else %>
-              <li><%= link_to "Log in", login_path %></li>
-          <% end %>    
-            <%= link_to "Display", display_path,  class: 'nav-item nav-link '%>
-            <%= link_to "For Sale", forsales_path,  class: 'nav-item nav-link '%>
-            <%= link_to "For Auction", forauctions_path,  class: 'nav-item nav-link '%>
-        </div><!--navbar-nav-->
-    </div><!--collapse-->
+      <button class=" navbar navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-lablel="toggle navigation">
+      <span class="navbar-toggler-icon"></span></button>
+  
+      <%= link_to "OddityMarket", root_path, class: 'navbar-brand' %> 
+  
+      <div class="collapse navbar-collapse justify-content-end " id="mainNav">
+          <div class="navbar-nav">
+              <%= link_to( "Home", root_path, class: 'nav-item nav-link')%>-->
+              <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>-->
+              <%= link_to "Contact", contact_path,  class: 'nav-item nav-link '%>
+               <%= link_to "Support", support_path,  class: 'nav-item nav-link '%>  
+              <%= link_to "Sign Up", signup_path,  class: 'nav-item nav-link '%>
+              <%= link_to "Log in", login_path ,  class: 'nav-item nav-link '%>
+              
+              <% if logged_in? %>
+                <%= link_to "Users", '#', class: 'nav-item nav-link '%>
+                <%= link_to "Profile", current_user, class: 'nav-item nav-link '%>
+                <%= link_to "Settings", '#', class: 'nav-item nav-link '%>
+                <%= link_to "Log out", logout_path, method: "delete" , class: 'nav-item nav-link '%>
+              <% else %>
+                  <%= link_to "Log in", login_path ,  class: 'nav-item nav-link '%>   
+              <% end %>
+              
+              <%= link_to "Display", display_path,  class: 'nav-item nav-link '%>
+              <%= link_to "For Sale", forsales_path,  class: 'nav-item nav-link '%>
+              <%= link_to "For Auction", forauctions_path,  class: 'nav-item nav-link '%>
+          </div><!--navbar-nav-->
+      </div><!--collapse-->
+        </ul> 
     </nav>
+    <%= yield %>
+    <br><br><br><br>
      <% flash.each do |message_type, message| %> <!--在网站的布局中添加 flash 变量的内容-->
           <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end%>
         
         <%= debug(params) if Rails.env.development? %> <!--在开 发环境中显示调试信息-->
-        
-  <footer id="footer-main">
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-sm-3">
-                <h3>OddityMarket</h3>
-                <address>8888 University Dr, Burnaby, BC V5A 1S6 CANADA</address>
-            </div>
-            <div class="col-sm-3 pt-3">
-                <h3>title</h3>
-                <ul class="list-unstyled">
-                    <li><a href="">link</a></li>
-                    <li><a href="">link</a></li>
-                    <li><a href="">link</a></li>
-                    <li><a href="">link</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3 pt-3">
-                <h3>title</h3>
-                <ul class="list-unstyled">
-                    <li><a href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <h3>Follow</h3>
-                <div id="social" >
-                  <a href="#" ><i class="fa fa-facebook-official"></i></a>
-                  <a href="#" ><i class="fa fa-weibo" aria-hidden="true"></i></a>
-                  <a href="#/" ><i class="fa fa-instagram"></i></a>
-                  <!-- <a href="#" ><i class="fa fa-qq" aria-hidden="true"></i></a> -->
-                  <!-- <a href="#" ><i class="fa fa-weixin" aria-hidden="true"></i></a> -->
-                  <!-- <a href="#" ><i class="fa fa-twitter"></i></a> -->
-                  <!-- <a href="#" ><i class="fa fa-linkedin"></i></a> -->
-                </div>
-              
-            </div>
-        </div>
-        <div class="row">
-           <div class="col">
-               <hr>
-            <p class="text-center">© 2017, OddityMarket. All Rights Reserved.</p>
-        </div>
-           </div>
-            
-    </div>
-</footer>
-        
   </body>
 </html>
