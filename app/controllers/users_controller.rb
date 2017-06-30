@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save   # 处理注册成功的情况 Create Sucessful 
       log_in @user
       flash[:success] = "Welcome to the Oddity Market"
-      redirect_to user_url(@user)
+      redirect_to @user
     else# 处理注册失敗的情况 Create Failed
       render 'new' 
     end
