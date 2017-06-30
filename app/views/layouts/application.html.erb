@@ -11,18 +11,28 @@
     <%= link_to "OddityMarket", root_path, id: "logo" %> 
     <nav>
       <ul> 
-        <!--link_to 的第一个参数是链接文本，第二个参数是 URL
-            #是Web 开发中经常使用的占位符-->
         <li><%= link_to "Home", root_path %></li> 
         <li><%= link_to "About", about_path %></li> 
         <li><%= link_to "Contact", contact_path %></li> 
-        <li><%= link_to "Sign Up", signup_path %></li> 
-
-        <li><%= link_to "Support", '#' %></li> 
-        <li><%= link_to "Log in", '#' %></li>
+        <li><%= link_to "Support", support_path %></li> 
+        
+        <li><%= link_to "Sign Up", signup_path %></li>
+        
+        <% if logged_in? %>
+          <li><%= link_to "Users", '#' %></li>
+          <li><%= link_to "Profile", current_user %></li> 
+          <li><%= link_to "Settings", '#' %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %> </li>
+          <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+        
+        
         <li><%= link_to "Display", display_path %></li>
         <li><%= link_to "For Sale", forsales_path %></li>
         <li><%= link_to "For Auction", forauctions_path %></li>
+        
+        
         <% flash.each do |message_type, message| %> <!--在网站的布局中添加 flash 变量的内容-->
           <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end%>
