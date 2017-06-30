@@ -15,8 +15,11 @@
 
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<style type="text/css">
+  @-ms-viewport     { width: device-width; }
+  @-o-viewport      { width: device-width; }
+  @viewport         { width: device-width; }
+</style>
 
 
     <link href="signin.css" rel="stylesheet">
@@ -30,27 +33,29 @@
   <body>
 
     <div class="container">
-      <form class="form-signin">
-        <%= form_for(@user, url: signup_path) do |f| %>
+      <%= form_for(@user, url: signup_path) do |f| %>
         <%= render 'shared/error_messages' %>
         
         <h2 class="form-signin-heading">Please sign up</h2>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
+        
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
+        
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
+        
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
+        
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
         <%= f.submit "Create my account", class: "btn btn-primary" %> 
-      </form>
-    <% end %>
+      <% end %>
     </div> 
 
 

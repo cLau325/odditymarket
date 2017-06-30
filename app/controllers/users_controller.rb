@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(user_params) 
+    @user = User.new(user_params)
     if @user.save   # 处理注册成功的情况 Create Sucessful 
       log_in @user
       flash[:success] = "Welcome to the Oddity Market"
