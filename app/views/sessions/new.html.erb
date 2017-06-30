@@ -1,4 +1,3 @@
-
 <% provide(:title, "Log in") %>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,40 +8,28 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-
-
     <title>Log in</title>
-
-
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
   </head>
 
   <body>
-
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-       <%= form_for(:session, url: login_path) do |f| %>
-        <%= render 'shared/error_messages' %>
-        
-        <h2 class="form-signin-heading">Please log in</h2>
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="form-signin-heading">Please login</h2>
+      <%= form_for(:session, url: login_path) do |f| %> 
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
         
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
-
-        
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <%= f.submit "Log in", class: "btn btn-primary" %> 
-      <% end %>
-      <p>New user? <%= link_to "Sign up now!", signup_path %></p> </div>
-    </div> 
-
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+    <%= f.submit "Log in", class: "btn btn-primary" %>
+  <% end %>
+  
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p> 
+  </div>
+</div>
