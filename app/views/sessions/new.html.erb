@@ -14,7 +14,7 @@
 
   <body>
     <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col">
       <h2 class="form-signin-heading">Please login</h2>
       <div class="account">
         <%= form_for(:session, url: login_path) do |f| %> 
@@ -29,8 +29,10 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-    <%= f.submit "Log in", class: "btn btn-primary" %>
-  <% end %>
+        <div class="login1">
+          <%= f.submit "Log in", class: "btn btn-primary" %>
+          <% end %>
+        </div>
    <p>New user? <%= link_to "Sign up now!", signup_path %></p> 
   </div>
   </div>
@@ -39,5 +41,7 @@
 </html>
 
 <style>
-.account{margin-right: 150px}
+.col{margin-left: 800px;margin-right: 800px;#border: 5px solid red;}
+.form-signin-heading{margin-left: 70px;}
+.login1{margin-left: 100px}
 </style>
