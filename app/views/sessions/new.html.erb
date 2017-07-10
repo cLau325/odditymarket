@@ -9,15 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Log in</title>
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
   </head>
 
   <body>
     <div class="row">
     <div class="col">
+       <%= form_for(:session, url: login_path) do |f| %> 
       <h2 class="form-signin-heading">Please login</h2>
       <div class="account">
-        <%= form_for(:session, url: login_path) do |f| %> 
+        
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
         
@@ -29,14 +29,13 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <div class="login1">
-          <%= f.submit "Log in", class: "btn btn-primary" %>
-          <% end %>
-        </div>
-   <p>New user? <%= link_to "Sign up now!", signup_path %></p> 
+
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+        <% end %>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p> 
   </div>
   </div>
-  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+ 
 </body>
 </html>
 
