@@ -14,8 +14,8 @@
 
   <body>
     <div class="row">
-      <h2 class="form-signin-heading">Please login</h2>
       <%= form_for(:session, url: login_path) do |f| %> 
+      <h2 class="form-signin-heading">Please login</h2>
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
         
