@@ -1,7 +1,16 @@
+<header id ="auctionHeader" class="jumbotron text-white">
+  <div class="container">
+    <h1 class="jumbotron-heading">Auction</h1>
+    <p class="lead text-white">Some Text</p>
+    </p>
+  </div>
+</header>
+
 <% @forauction.each do |i| %>
 <h2>
   <%= link_to i.fa_name, i %>
 </h2>
+
 
 <% end %>
 
