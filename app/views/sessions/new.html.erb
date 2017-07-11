@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,8 +12,7 @@
   </head>
 
   <body>
-    <div class="row">
-    <div class="col">
+    <div class="body">
        <%= form_for(:session, url: login_path) do |f| %> 
       <h2 class="form-signin-heading">Please login</h2>
       <div class="account">
@@ -34,16 +33,11 @@
         <% end %>
     <p>New user? <%= link_to "Sign up now!", signup_path %></p> 
   </div>
-  </div>
  
 </body>
 </html>
 
 <style>
-.col{#margin-left: 800px;#margin-right: 800px;
-  display:inline-block;
-  *display:inline;
-  *zoom:1;}
-.form-signin-heading{margin-left: 70px;}
-.login1{margin-left: 100px}
+.body{width:auto;padding-right:40%;padding-left:40%;}
+.form-signin-heading{padding-left: 20%;}
 </style>
