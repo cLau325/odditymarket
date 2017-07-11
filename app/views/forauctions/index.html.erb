@@ -6,12 +6,26 @@
   </div>
 </header>
 
-<% @forauction.each do |i| %>
-<h2>
-  <%= link_to i.fa_name, i %>
-</h2>
+<%= link_to "Upload An Art for Auction", new_forauction_path, class: "btn btn-default" %>
 
-
+<% @forauction.each_slice(3) do |i| %>
+  <div class="row">
+    <% i.each do |j| %>
+      <div class="col-md-4">
+        <div class="aucproduct">
+          <div class="aucimage">
+            <%= link_to j do %>
+              <%= image_tag j.fa_image.url(:medium) %>
+            <% end %>
+          </div>
+          <h2>
+            <%= link_to j.fa_name, j %>
+          </h2>
+          <h4>
+            $ <%= j.fa_baseprice %>
+          </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
-
-<%= link_to "New", new_forauction_path, class: "btn btn-default" %>

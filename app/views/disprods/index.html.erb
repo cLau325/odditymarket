@@ -1,8 +1,24 @@
-<% @disprod.each do |i| %>
-<h2>
-  <%= link_to i.dp_name, i %>
-</h2>
+<%= link_to "Upload An Art for Display", new_disprod_path, class: "btn btn-default" %>
 
+<% @disprod.each_slice(3) do |i| %>
+  <div class="row">
+    <% i.each do |j| %>
+      <div class="col-md-4">
+        <div class="disproduct">
+          <div class="disimage">
+            <%= link_to j do %>
+              <%= image_tag j.image.url(:medium) %>
+            <% end %>
+          </div>
+          <h2>
+            <%= link_to j.dp_name, j %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
-<%= link_to "New", new_disprod_path, class: "btn btn-default" %>
+
+
+
