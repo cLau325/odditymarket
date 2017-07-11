@@ -1,8 +1,21 @@
-<% @forsale.each do |i| %>
-<h2>
-  <%= link_to i.fs_name, i %>
-</h2>
+<%= link_to "Upload An Art for Sale", new_forsale_path, class: "btn btn-default" %>
 
+<% @forsale.each_slice(3) do |i| %>
+  <div class="row">
+    <% i.each do |j| %>
+      <div class="col-md-4">
+        <div class="salproduct">
+          <div class="salimage">
+            <%= link_to j do %>
+              <%= image_tag j.fs_image.url(:medium) %>
+            <% end %>
+          </div>
+          <h2>
+            <%= link_to j.fs_name, j %>
+            <h4>$ <%= j.fs_price %></h4>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
-
-<%= link_to "New", new_forsale_path, class: "btn btn-default" %>
