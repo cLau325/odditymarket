@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="">
     <title>OdditMarket</title>
-    
+  
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -21,39 +21,44 @@
     <nav class="navbar navbar-inverse bg-inverse  navbar-toggleable-sm" role="navigation">
       <button class=" navbar navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-lablel="toggle navigation">
       <span class="navbar-toggler-icon"></span></button>
-  
+    
       <%= link_to "OddityMarket", root_path, class: 'navbar-brand' %> 
-  
+    
       <div class="collapse navbar-collapse justify-content-end " id="mainNav">
-          <div class="navbar-nav">
-              <%= link_to( "Home", root_path, class: 'nav-item nav-link')%>-->
-              <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>-->
-              <%= link_to "Contact", contact_path,  class: 'nav-item nav-link '%>
-               <%= link_to "Support", support_path,  class: 'nav-item nav-link '%>  
-              <%= link_to "Sign Up", signup_path,  class: 'nav-item nav-link '%>
-              
-              <% if logged_in? %>
-                <%= link_to "Users", '#', class: 'nav-item nav-link '%>
-                <%= link_to "Profile", current_user, class: 'nav-item nav-link '%>
-                <%= link_to "Settings", '#', class: 'nav-item nav-link '%>
-                <%= link_to "Log out", logout_path, method: "delete" , class: 'nav-item nav-link '%>
-              <% else %>
-                  <%= link_to "Log in", login_path ,  class: 'nav-item nav-link '%>   
-              <% end %>
-              
-              <%= link_to "Display", display_path,  class: 'nav-item nav-link '%>
-              <%= link_to "For Sale", forsales_path,  class: 'nav-item nav-link '%>
-              <%= link_to "For Auction", forauctions_path,  class: 'nav-item nav-link '%>
-          </div><!--navbar-nav-->
+        <div class="navbar-nav">
+          <%= link_to( "Home", root_path, class: 'nav-item nav-link')%>-->
+          <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>-->
+          <%= link_to "Contact", contact_path,  class: 'nav-item nav-link '%>
+          <%= link_to "Support", support_path,  class: 'nav-item nav-link '%>  
+          <%= link_to "Sign Up", signup_path,  class: 'nav-item nav-link '%>
+          
+          <% if logged_in? %>
+          <%= link_to "Users", '#', class: 'nav-item nav-link '%>
+          <%= link_to "Profile", current_user, class: 'nav-item nav-link '%>
+          <%= link_to "Settings", '#', class: 'nav-item nav-link '%>
+          <%= link_to "Log out", logout_path, method: "delete" , class: 'nav-item nav-link '%>
+          <% else %>
+          <%= link_to "Log in", login_path ,  class: 'nav-item nav-link '%>   
+          <% end %>
+      
+          <%= link_to "Display", display_path,  class: 'nav-item nav-link '%>
+          <%= link_to "For Sale", forsales_path,  class: 'nav-item nav-link '%>
+          <%= link_to "For Auction", forauctions_path,  class: 'nav-item nav-link '%>
+        </div><!--navbar-nav-->
       </div><!--collapse-->
-        </ul> 
     </nav>
+    
     <%= yield %>
     <br><br><br><br>
-     <% flash.each do |message_type, message| %> <!--在网站的布局中添加 flash 变量的内容-->
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end%>
-        
-        <%= debug(params) if Rails.env.development? %> <!--在开 发环境中显示调试信息-->
+    
+    
+    
+    
+  <!------------------------------------------------------------------------------------>
+  <% flash.each do |message_type, message| %> <!--在网站的布局中添加 flash 变量的内容-->
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end%>
+  
+  <%= debug(params) if Rails.env.development? %> <!--在开 发环境中显示调试信息-->
   </body>
 </html>
