@@ -1,11 +1,21 @@
+<!–[if lt IE 9]>
+<script src=”http://html5shim.googlecode.com/svn/trunk/html5.js”></script>
+<![endif]–>
+<!–[if lt IE 9]>
+<script src=”http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js”></script>
+<![endif]–>
+
+
+
+
 <% provide(:title, "Log in") %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Log in</title>
@@ -37,7 +47,15 @@
 </body>
 </html>
 
-<style>
-.body{width:auto;padding-right:40%;padding-left:40%;}
-.form-signin-heading{padding-left: 20%;}
+<style type="text/css">
+@media screen and (min-width: 900px) {
+  .body{width:auto;padding-right:40%;padding-left:40%;}
+  .body {font:normal 100% Arial,sans-serif;font-size:1.4rem; } 
+  .form-signin-heading{padding-left: 20%;}
+}
+@media screen and (max-width: 900px) {
+  .body{width:auto;padding-right:20%;padding-left:20%;}
+  .body {font:normal 100% Arial,sans-serif;font-size:1.4rem; } 
+  .form-signin-heading{padding-left: 10%;}
+}
 </style>

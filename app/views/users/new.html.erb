@@ -2,14 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href="media-queries.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="">
     <meta name="author" content="">
-
-
     <title>Sign up</title>
 
 
@@ -19,7 +18,7 @@
 
   <body>
 
-    <div class="container">
+    <div class="body">
       <%= form_for(@user, url: signup_path) do |f| %>
         <%= render 'shared/error_messages' %>
         
@@ -47,3 +46,16 @@
 
   </body>
 </html>
+
+<style type="text/css">
+@media screen and (min-width: 900px) {
+  .body{width:auto;padding-right:40%;padding-left:40%;}
+  .body {font:normal 100% Arial,sans-serif;font-size:1.4rem; } 
+  .form-signin-heading{padding-left: 20%;}
+}
+@media screen and (max-width: 900px) {
+  .body{width:auto;padding-right:20%;padding-left:20%;}
+  .body {font:normal 100% Arial,sans-serif;font-size:1.4rem; } 
+  .form-signin-heading{padding-left: 10%;}
+}
+</style>
