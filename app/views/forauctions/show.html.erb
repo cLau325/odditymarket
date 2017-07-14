@@ -1,12 +1,28 @@
-<% provide(:title, @forauction.fa_name) %>
-<%= image_tag @forauction.fa_image.url(:medium, class: "item_image") %>
-<h1><%= @forauction.fa_name %></h1>
-<h4>$ <%= @forauction.fa_baseprice %></h4>
-<p>
-  <%= @forauction.fa_desc %>
-</p>
+<!–[if lt IE 9]>
+<script src=”http://html5shim.googlecode.com/svn/trunk/html5.js”></script>
+<![endif]–>
+<!–[if lt IE 9]>
+<script src=”http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js”></script>
+<![endif]–>
+<!--for XXX show-->
+<!DOCTYPE html>
+<html>
+    <div class="body">
+        <% provide(:title, @forauction.fa_name) %>
+        <%= image_tag @forauction.fa_image.url(:medium, class: "item_image") %>
+        <h1> class="h1"><%= @forauction.fa_name %></h1>
+        <h4>$ <%= @forauction.fa_baseprice %></h4>
+        <p>
+          <%= @forauction.fa_desc %>
+        </p>
+        
+        
+        <%= link_to "Back", forauctions_path, class: "btn btn-default" %>
+        <%= link_to "Edit", edit_forauction_path, class: "btn btn-default" %>
+        <%= link_to "Delete", forauction_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>
+    </div>
+</html>
 
 
-<%= link_to "Back", forauctions_path, class: "btn btn-default" %>
-<%= link_to "Edit", edit_forauction_path, class: "btn btn-default" %>
-<%= link_to "Delete", forauction_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>
+
+

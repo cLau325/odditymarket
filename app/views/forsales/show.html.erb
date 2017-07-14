@@ -1,12 +1,26 @@
-<% provide(:title, @forsale.fs_name) %>
-<%= image_tag @forsale.fs_image.url(:medium, class: "item_image") %>
-<h1><%= @forsale.fs_name %></h1>
-<h4>$ <%= @forsale.fs_price %></h4>
-<p>
-  <%= @forsale.fs_desc %>
-</p>
+<!–[if lt IE 9]>
+<script src=”http://html5shim.googlecode.com/svn/trunk/html5.js”></script>
+<![endif]–>
+<!–[if lt IE 9]>
+<script src=”http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js”></script>
+<![endif]–>
+<!--for XXX show-->
+<!DOCTYPE html>
+<html>
+    <div class="body">
+        <% provide(:title, @forsale.fs_name) %>
+        <%= image_tag @forsale.fs_image.url(:medium, class: "item_image") %>
+        <h1><%= @forsale.fs_name %></h1>
+        <h4>$ <%= @forsale.fs_price %></h4>
+        <p>
+          <%= @forsale.fs_desc %>
+        </p>
+        
+        
+        <%= link_to "Back", forsales_path, class: "btn btn-default" %>
+        <%= link_to "Edit", edit_forsale_path, class: "btn btn-default" %>
+        <%= link_to "Delete", forsale_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>
+    </div>
+</html>
 
 
-<%= link_to "Back", forsales_path, class: "btn btn-default" %>
-<%= link_to "Edit", edit_forsale_path, class: "btn btn-default" %>
-<%= link_to "Delete", forsale_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>
