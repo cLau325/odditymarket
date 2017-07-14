@@ -1,24 +1,49 @@
-<%= link_to "Upload An Art for Display", new_disprod_path, class: "btn btn-default" %>
+<!–[if lt IE 9]>
+<script src=”http://html5shim.googlecode.com/svn/trunk/html5.js”></script>
+<![endif]–>
+<!–[if lt IE 9]>
+<script src=”http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js”></script>
+<![endif]–>
 
-<% @disprod.each_slice(3) do |i| %>
-  <div class="row">
-    <% i.each do |j| %>
-      <div class="col-md-4">
-        <div class="disproduct">
-          <div class="disimage">
-            <%= link_to j do %>
-              <%= image_tag j.image.url(:medium) %>
-            <% end %>
+<!DOCTYPE html>
+<html>
+  <%= link_to "Upload An Art for Display", new_disprod_path, class: "btn btn-primary"%>
+  <% @disprod.each_slice(3) do |i| %>
+    <div class="row">
+      <% i.each do |j| %>
+        <div class="col-md-4">
+          <div class="disproduct">
+            <div class="disimage">
+              <%= link_to j do %>
+                <%= image_tag j.image.url(:medium) %>
+              <% end %>
+            </div>
+            <h2 class="h2">
+              <%= link_to j.dp_name, j %>
+            </h2>
           </div>
-          <h2>
-            <%= link_to j.dp_name, j %>
-          </h2>
         </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+  <% end %>
+</html>
 
 
+
+
+<style type="text/css">
+@media screen and (min-width: 901px) {
+  .btn{margin-top:1%}
+  .row{font:normal 100% Arial,sans-serif;font-size:1.4rem;padding-top:5%; } 
+  .disimage{width:auto;text-align:center;}
+  .h2{width:auto;text-align:center;}
+  .form-signin-heading{padding-left: 20%;}
+}
+@media screen and (max-width: 900px) {
+  .btn{width:auto;padding-right:20%;padding-left:20%;}
+  .body {font:normal 100% Arial,sans-serif;font-size:1.4rem; } 
+  .form-signin-heading{padding-left: 10%;}
+}
+</style>
 
 
