@@ -19,7 +19,7 @@ gem 'jbuilder',       '2.4.1'
 
 gem 'simple_form', '~> 3.5'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-
+gem "rb-fsevent", "~> 0.9.0"
 
 group :development, :test do
   gem 'sqlite3' , '1.3.12'
