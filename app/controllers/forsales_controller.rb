@@ -4,6 +4,11 @@ class ForsalesController < ApplicationController
     
     def index
         @forsale = Forsale.all.order("created_at DESC")
+        if params[:search]
+            @forsale = Forsale.search(params[:search]).order("created_at DESC")
+        else
+            @forsale = Forsale.all.order('created_at DESC')
+        end
     end
     
     def show

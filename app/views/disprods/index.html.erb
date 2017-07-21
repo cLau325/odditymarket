@@ -28,8 +28,10 @@
   <% end %>
 </html>
 
-
-
+<%= form_tag(disprods_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
 
 <style type="text/css">
 @media screen and (min-width: 901px) {
