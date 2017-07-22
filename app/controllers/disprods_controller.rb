@@ -5,13 +5,14 @@ class DisprodsController < ApplicationController
     def index
         @disprod = Disprod.all.order("created_at DESC")
         if params[:search]
-            @disprod = Forsale.search(params[:search]).order("created_at DESC")
+            @disprod = Disprod.search(params[:search]).order("created_at DESC")
         else
-            @disprod = Forsale.all.order('created_at DESC')
+            @disprod = Disprod.all.order('created_at DESC')
         end
     end
     
     def show
+         @disprod = Disprod.find(params[:id])
     end
     
     def new

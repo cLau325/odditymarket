@@ -5,14 +5,14 @@ class ForauctionsController < ApplicationController
     def index
         @forauction = Forauction.all.order("created_at DESC")
         if params[:search]
-            @forauction = Forsale.search(params[:search]).order("created_at DESC")
+            @forauction = Forauction.search(params[:search]).order("created_at DESC")
         else
-            @forauction = Forsale.all.order('created_at DESC')
+            @forauction = Forauction.all.order('created_at DESC')
         end
     end
     
     def show
-        
+        @forauction = Forauction.find(params[:id])
     end
     
     def new
