@@ -22,15 +22,19 @@
             <div class="row">
                 <% i.each do |j| %>
                 <div class="col-md-4">
-                    <% if logged_in? %>
-                        <%= link_to j do %>
-                        <%= image_tag j.image.url(:medium) %>
+                    <div class="disproduct">
+                        <div class="disimage">
+                        <% if logged_in? %>
+                            <%= link_to j do %>
+                            <%= image_tag j.image.url(:medium) %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to login_path(@sessions) do %>
+                            <%= image_tag j.image.url(:medium) %>
+                            <% end %>
                         <% end %>
-                    <% else %>
-                        <%= link_to login_path(@sessions) do %>
-                        <%= image_tag j.image.url(:medium) %>
-                        <% end %>
-                    <% end %>
+                        </div>
+                    </div>
                     <h4> <%= j.dp_name %> </h4>
                 <% end %>
                 </div>
@@ -44,19 +48,23 @@
             <!--<p class="lead">title 2 description</p>-->
             <hr>
         </div>
-            <% @forsale.each_slice(3) do |i| %>
+            <% @forsale.each_slice(3) do |k| %>
             <div class="row">
-                <% i.each do |j| %>
+                <% k.each do |j| %>
                 <div class="col-md-4">
-                    <% if logged_in? %>
-                        <%= link_to j do %>
-                        <%= image_tag j.fs_image.url(:medium) %>
+                    <div class="salproduct">
+                        <div class="salimage">
+                        <% if logged_in? %>
+                            <%= link_to j do %>
+                            <%= image_tag j.fs_image.url(:medium) %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to login_path(@sessions) do %>
+                            <%= image_tag j.fs_image.url(:medium) %>
+                            <% end %>
                         <% end %>
-                    <% else %>
-                        <%= link_to login_path(@sessions) do %>
-                        <%= image_tag j.fs_image.url(:medium) %>
-                        <% end %>
-                    <% end %>
+                        </div>
+                    </div>
                     <h4><%= j.fs_name %> </h4>
                     <h4>$ <%= j.fs_price %></h4>
                 <% end %>

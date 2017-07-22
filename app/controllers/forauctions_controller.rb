@@ -1,7 +1,6 @@
 class ForauctionsController < ApplicationController
   
     before_action :find_auction, only:[:show, :edit, :update, :destroy, :newbid]
-    before_action :current_user, only:[:create, :destroy]
     
     def index
         @forauction = Forauction.all.order("created_at DESC")
