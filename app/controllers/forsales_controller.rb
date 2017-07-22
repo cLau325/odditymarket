@@ -48,11 +48,17 @@ class ForsalesController < ApplicationController
         redirect_to @forsale
     end
     
+    def sold
+        @forsale = Forsale.find(params[:id])
+        @forsale.update(sold: true)
+        redirect_to @forsale
+    end
+    
     
     private
     
     def forsale_params
-        params.require(:forsale).permit(:fs_name, :fs_desc, :fs_image, :fs_price)
+        params.require(:forsale).permit(:fs_name, :fs_desc, :fs_image, :fs_price, :sold, :user_id)
     end
     
     def find_sale

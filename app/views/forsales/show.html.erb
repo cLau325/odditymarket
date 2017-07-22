@@ -16,10 +16,17 @@
           <%= @forsale.fs_desc %>
         </p>
         
-        
+        <% if @forsale.sold == false %>
+            <%= button_to "BUY", sold_forsale_path(id: @forsale.id), data: { confirm: "Are you sure?"} %>
+        <% else %>
+            <p>This product is sold</p>
+        <% end %>
         <%= link_to "Back", forsales_path, class: "btn btn-default" %>
+        
+        <% if current_user.id == @forsale.user_id %>
         <%= link_to "Edit", edit_forsale_path, class: "btn btn-default" %>
         <%= link_to "Delete", forsale_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>
+        <% end %>
     </div>
 </html>
 

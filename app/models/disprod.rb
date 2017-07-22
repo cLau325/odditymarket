@@ -1,4 +1,5 @@
 class Disprod < ApplicationRecord
+   belongs_to :user, optional: true
    validates :dp_name, presence: true,length: { maximum: 20 }, uniqueness:{case_sensitive: false }
    validates :desc, :image, presence: true 
    has_attached_file :image, styles: { :medium => ["400x400#", :jpg, :png ] }

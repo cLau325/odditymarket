@@ -12,7 +12,6 @@ class DisprodsController < ApplicationController
     end
     
     def show
-        
     end
     
     def new
@@ -53,7 +52,7 @@ class DisprodsController < ApplicationController
     private
     
     def disprod_params
-        params.require(:disprod).permit(:dp_name, :desc, :image)
+        params.require(:disprod).permit(:dp_name, :desc, :image, :user_id)
     end
     
     def find_prod

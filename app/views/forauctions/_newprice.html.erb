@@ -1,0 +1,21 @@
+<div class="New Product Form">
+
+<h4> Current Price $ <%= @forauction.fa_baseprice %></h4>
+
+<%= form_for @forauction do |i| %>
+  <%= render "forauctions/error_messages" %>
+  
+  <div class="panel-body">
+      <p>
+      <%= i.hidden_field :cur_highest , :value => current_user.id %>
+      <%= i.label :fa_baseprice, "Enter New Price" %>
+      <%= i.number_field :fa_baseprice, class: 'form-control',
+                      min: @forauction.fa_baseprice+10, step: 10 %>
+      </p>     
+      
+  </div>
+  <%= i.submit "Confirm", class: "btn btn-primary" %>
+  
+<% end %>
+
+</div>

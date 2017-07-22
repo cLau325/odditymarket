@@ -3,8 +3,9 @@
     <aside class="col-md-4"> 
       <section class="user_info">
         <h1>
-            <%= gravatar_for @user %>
-            <%= @user.name %> 
+            <%= gravatar_for @user %> </br>
+            Name :<%= @user.name %> </br>
+            ID : <%= current_user.id %>
         </h1>
       </section>
     </aside>

@@ -10,16 +10,27 @@
     <div class="body">
         <% provide(:title, @forauction.fa_name) %>
         <%= image_tag @forauction.fa_image.url(:medium, class: "item_image") %>
-        <h1> class="h1"><%= @forauction.fa_name %></h1>
-        <h4>$ <%= @forauction.fa_baseprice %></h4>
+        <h1><%= @forauction.fa_name %></h1>
+        <h3>$ <%= @forauction.fa_baseprice %></h3>
+        <% if current_user.id == @forauction.cur_highest %>
+            <h5>You have the currently highest bid</h5>
+        <% else %>
+            <h5>ID : <%= @forauction.cur_highest %> has the currently highest bid</h5>
+        <% end %>
         <p>
           <%= @forauction.fa_desc %>
         </p>
-        
-        
+            
+        <% if current_user.id != @forauction.cur_highest %>
+        <%= link_to "Bid Increment", newbid_forauction_path, class: "btn btn-default" %>
+        <% end %>
+            
         <%= link_to "Back", forauctions_path, class: "btn btn-default" %>
+            
+        <% if current_user.id == @forauction.user_id %>
         <%= link_to "Edit", edit_forauction_path, class: "btn btn-default" %>
         <%= link_to "Delete", forauction_path, method: :delete,  data: { confirm: "Are you sure?"}, class: "btn btn-default" %>
+        <% end %>
     </div>
 </html>
 

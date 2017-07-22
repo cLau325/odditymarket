@@ -5,6 +5,10 @@
 
   <div class="panel-body">
       <p>
+      <%= i.hidden_field :user_id , :value => current_user.id %>
+      <p>
+        
+      <p>
       <%= i.label :dp_name, "Product Name" %>
       <%= i.text_field :dp_name, class: 'form-control' %>
       </p>

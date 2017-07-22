@@ -14,205 +14,82 @@
 <section id="home">
     <div class="container">
         <div id="home-header">
-            <h2>Recent Items</h2>
+            <h2>Recent Display</h2>
             <!--<p class="lead">title 1 description</p>-->
             <hr>
-        </div>
+        </div>       
+            <% @disprod.each_slice(3) do |i| %>
             <div class="row">
-            <div class="col-sm-12">
-                <div class="card-deck">
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/1.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Beads</p>
-                            <p class="card-text">$ 99<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card1-->
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/2.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Mask</p>
-                            <p class="card-text">$ 69<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card2-->  
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/3.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Abstract Woman</p>
-                            <p class="card-text">$ 199<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card3-->   
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/4.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Swan</p>
-                            <p class="card-text">$ 89<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card4-->  
-                </div><!--card deck-->
-            </div><!--col-12-->
-        </div><!--row-->
-            <br>
-            <div class="row">
-            <div class="col-sm-12">
-                <div class="card-deck">
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/5.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Vase</p>
-                            <p class="card-text">$ 399<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card1-->
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/6.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Bird</p>
-                            <p class="card-text">$ 169<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card2-->  
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/7.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">sculpture</p>
-                            <p class="card-text">$ 599<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card3-->   
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/8.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Whale</p>
-                            <p class="card-text">$ 349<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card4-->  
-                </div><!--card deck-->
-            </div><!--col-12-->
-        </div><!--row-->
+                <% i.each do |j| %>
+                <div class="col-md-4">
+                    <% if logged_in? %>
+                        <%= link_to j do %>
+                        <%= image_tag j.image.url(:medium) %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to login_path(@sessions) do %>
+                        <%= image_tag j.image.url(:medium) %>
+                        <% end %>
+                    <% end %>
+                    <h4> <%= j.dp_name %> </h4>
+                <% end %>
+                </div>
+            <% end %>
+            </div><!--row-->
         
     <br><br><br><br><br>
         
         <div id="home-header">
-            <h2>Feature Items</h2>
+            <h2>Recent Sale</h2>
             <!--<p class="lead">title 2 description</p>-->
             <hr>
         </div>
+            <% @forsale.each_slice(3) do |i| %>
             <div class="row">
-            <div class="col-sm-12">
-                <div class="card-deck">
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/9.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Buddha </p>
-                            <p class="card-text">$ 39<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card1-->
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/10.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Maskss</p>
-                            <p class="card-text">$ 129<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card2-->  
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/11.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Horse</p>
-                            <p class="card-text">$ 499<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card3-->   
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/12.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Curve</p>
-                            <p class="card-text">$ 189<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card4-->  
-                </div><!--card deck-->
-            </div><!--col-12-->
-        </div><!--row-->
-            <br>
-            <div class="row">
-            <div class="col-sm-12">
-                <div class="card-deck">
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/13.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Forg</p>
-                            <p class="card-text">$ 199<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card1-->
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/14.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Giraffe</p>
-                            <p class="card-text">$ 59<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card2-->  
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/15.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Dancer</p>
-                            <p class="card-text">$ 299<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card3-->   
-                    
-                    <div class="card col-sm-3" >
-                       <img style="width:13em; height:13em" class="card-img-top" src="/assets/16.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Solider</p>
-                            <p class="card-text">$ 349<small class="text-muted"> per item</small></p>
-                        </div>
-                    </div><!--card4-->  
-                </div><!--card deck-->
-            </div><!--col-12-->
-        </div><!--row-->
+                <% i.each do |j| %>
+                <div class="col-md-4">
+                    <% if logged_in? %>
+                        <%= link_to j do %>
+                        <%= image_tag j.fs_image.url(:medium) %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to login_path(@sessions) do %>
+                        <%= image_tag j.fs_image.url(:medium) %>
+                        <% end %>
+                    <% end %>
+                    <h4><%= j.fs_name %> </h4>
+                    <h4>$ <%= j.fs_price %></h4>
+                <% end %>
+                </div>
+            <% end %>
+            </div><!--row-->
         
     <br><br><br><br><br>
     
         <div id="home-header1">
-            <h2>Categories</h2>
+            <h2>Recent Auction</h2>
             <!--<p class="lead">title 3 description</p>-->
             <hr>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card-deck">
-                    <div class="card">
-                       <img style="width20em; height:20em" class="card-img-top" src="/assets/wood.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Wood</p>
-                            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                        </div>
-                    </div><!--card1-->
-    
-                    <div class="card">
-                       <img style="width20em; height:20em" class="card-img-top" src="/assets/glass.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Glass</p>
-                            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                        </div>
-                    </div><!--card2-->
-                    
-                    <div class="card">
-                       <img style="width20em; height:20em" class="card-img-top" src="/assets/tong.jpg" alt="fig">
-                        <div class="card-block text-xs-center">
-                            <p class="card-text">Metal</p>
-                            <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-                        </div>
-                    </div><!--card3-->
-                </div><!--card deck-->
-            </div><!--col-12-->
-    </div><!--row-->
+            <% @forauction.each_slice(3) do |i| %>
+            <div class="row">
+                <% i.each do |j| %>
+                <div class="col-md-4">
+                    <% if logged_in? %>
+                        <%= link_to j do %>
+                        <%= image_tag j.fa_image.url(:medium) %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to login_path(@sessions) do %>
+                        <%= image_tag j.fa_image.url(:medium) %>
+                        <% end %>
+                    <% end %>
+                    <h4> <%= j.fa_name %> </h4>
+                    <h4>$ <%= j.fa_baseprice %></h4>
+                <% end %>
+                </div>
+            <% end %>
+            </div><!--row-->
 </div><!--container-->
 </section><!--departent-->
 

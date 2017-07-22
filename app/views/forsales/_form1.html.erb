@@ -5,6 +5,10 @@
 
   <div class="panel-body">
       <p>
+      <%= i.hidden_field :user_id , :value => current_user.id %>
+      <p>
+        
+      <p>
       <%= i.label :fs_name, "Product Name" %>
       <%= i.text_field :fs_name, class: 'form-control' %>
       </p>
@@ -21,8 +25,13 @@
       
       <p>
       <%= i.label :fs_price, "Enter Price" %>
-      <%= i.text_field :fs_price, class: 'form-control' %>
+      <%= i.number_field :fs_price, class: 'form-control' %>
       </p>     
+      
+      <p>
+      <%= i.label :sold, "Sold/Not Sold" %>
+      <%= i.text_field :sold, class: 'form-control'%>
+      </p>   
       
   </div>
   <%= i.submit "confirm", class: "btn btn-primary" %>

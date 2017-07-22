@@ -2,8 +2,16 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :disprods
-  resources :forsales
-  resources :forauctions
+  resources :forsales do
+    member do
+      post 'sold'
+    end
+  end
+  resources :forauctions do
+    member do 
+      get 'newbid'
+    end
+  end
   resources :users 
 
   root 'static_pages#home'

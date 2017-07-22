@@ -1,6 +1,7 @@
 class ForauctionsController < ApplicationController
   
-    before_action :find_auction, only:[:show, :edit, :update, :destroy]
+    before_action :find_auction, only:[:show, :edit, :update, :destroy, :newbid]
+    before_action :current_user, only:[:create, :destroy]
     
     def index
         @forauction = Forauction.all.order("created_at DESC")
@@ -38,7 +39,22 @@ class ForauctionsController < ApplicationController
         if @forauction.update(forauction_params)
             redirect_to @forauction
         else
-            render 'edit'
+            #puts ''
+            #puts params[:controller]
+            #puts @forauction.fa_baseprice
+            #puts params[:id]
+            #puts ''
+            puts ''
+            puts @forauction.fa_baseprice
+            #puts @forsale.fs_price
+            puts ''
+            case URI(request.referer).path
+                when '/forauctions/' + params[:id] + '/newbid'
+                render 'newbid'
+                when '/forauctions/' + params[:id] + '/edit'
+                render 'edit'
+            end
+            
         end
     end
     
@@ -48,13 +64,17 @@ class ForauctionsController < ApplicationController
         redirect_to @forauction
     end
     
-    
+    def newbid
+        
+    end
+        
     private
     
     def forauction_params
-        params.require(:forauction).permit(:fa_name, :fa_desc, :fa_image, :fa_baseprice)
+        params.require(:forauction).permit(:fa_name, :fa_desc, :fa_image, :fa_baseprice, :cur_highest, :user_id)
     end
     
+
     def find_auction
         @forauction = Forauction.find(params[:id])
     end

@@ -40,10 +40,18 @@
           <% else %>
           <%= link_to "Log in", login_path ,  class: 'nav-item nav-link '%>   
           <% end %>
-      
+          
+          
+          <% if logged_in? %>
           <%= link_to "Display", display_path,  class: 'nav-item nav-link '%>
-          <%= link_to "For Sale", forsales_path,  class: 'nav-item nav-link '%>
-          <%= link_to "For Auction", forauctions_path,  class: 'nav-item nav-link '%>
+          <%= link_to "Sale", forsales_path,  class: 'nav-item nav-link '%>
+          <%= link_to "Auction", forauctions_path,  class: 'nav-item nav-link '%>
+          <% else %>
+          <%= link_to "Display", login_path ,  class: 'nav-item nav-link '%>  
+          <%= link_to "Sale", login_path ,  class: 'nav-item nav-link '%>  
+          <%= link_to "Auction", login_path ,  class: 'nav-item nav-link '%>  
+          <% end %>
+          
         </div><!--navbar-nav-->
       </div><!--collapse-->
     </nav>
