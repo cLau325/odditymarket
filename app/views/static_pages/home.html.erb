@@ -17,7 +17,7 @@
             <h2>Recent Display</h2>
             <!--<p class="lead">title 1 description</p>-->
             <hr>
-        </div>       
+        </div><!--home-header-->    
             <% @disprod.each_slice(3) do |i| %>
             <div class="row">
                 <% i.each do |j| %>
@@ -26,16 +26,17 @@
                         <div class="disimage">
                         <% if logged_in? %>
                             <%= link_to j do %>
-                            <%= image_tag j.image.url(:medium) %>
+                            <%= image_tag j.image.url(:small) %>
                             <% end %>
                         <% else %>
                             <%= link_to login_path(@sessions) do %>
-                            <%= image_tag j.image.url(:medium) %>
+                            <%= image_tag j.image.url(:small) %>
                             <% end %>
                         <% end %>
-                        </div>
-                    </div>
+                        </div><!--disimage-->
                     <h4> <%= j.dp_name %> </h4>
+                    </div><!--disproduct-->
+                </div><!--col-md-4-->
                 <% end %>
                 </div>
             <% end %>
@@ -47,28 +48,28 @@
             <h2>Recent Sale</h2>
             <!--<p class="lead">title 2 description</p>-->
             <hr>
-        </div>
-            <% @forsale.each_slice(3) do |k| %>
+        </div><!--home-header-->   
+            <% @forsale.each_slice(3) do |i| %>
             <div class="row">
-                <% k.each do |j| %>
+                <% i.each do |j| %>
                 <div class="col-md-4">
                     <div class="salproduct">
                         <div class="salimage">
                         <% if logged_in? %>
                             <%= link_to j do %>
-                            <%= image_tag j.fs_image.url(:medium) %>
+                            <%= image_tag j.fs_image.url(:small) %>
                             <% end %>
                         <% else %>
                             <%= link_to login_path(@sessions) do %>
-                            <%= image_tag j.fs_image.url(:medium) %>
+                            <%= image_tag j.fs_image.url(:small) %>
                             <% end %>
                         <% end %>
-                        </div>
-                    </div>
+                        </div><!--salimage-->
                     <h4><%= j.fs_name %> </h4>
                     <h4>$ <%= j.fs_price %></h4>
+                    </div><!--salproduct-->
+                </div><!--col-md-4-->
                 <% end %>
-                </div>
             <% end %>
             </div><!--row-->
         
@@ -78,24 +79,28 @@
             <h2>Recent Auction</h2>
             <!--<p class="lead">title 3 description</p>-->
             <hr>
-        </div>
+        </div><!--home-header-->   
             <% @forauction.each_slice(3) do |i| %>
             <div class="row">
                 <% i.each do |j| %>
                 <div class="col-md-4">
-                    <% if logged_in? %>
-                        <%= link_to j do %>
-                        <%= image_tag j.fa_image.url(:medium) %>
+                    <div class="aucproduct">
+                        <div class="aucimage">
+                        <% if logged_in? %>
+                            <%= link_to j do %>
+                            <%= image_tag j.fa_image.url(:small) %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to login_path(@sessions) do %>
+                            <%= image_tag j.fa_image.url(:small) %>
+                            <% end %>
                         <% end %>
-                    <% else %>
-                        <%= link_to login_path(@sessions) do %>
-                        <%= image_tag j.fa_image.url(:medium) %>
-                        <% end %>
-                    <% end %>
+                        </div><!--aucimage-->
                     <h4> <%= j.fa_name %> </h4>
                     <h4>$ <%= j.fa_baseprice %></h4>
+                    </div><!--aucproduct-->
+                </div><!--col-md-4-->
                 <% end %>
-                </div>
             <% end %>
             </div><!--row-->
 </div><!--container-->
