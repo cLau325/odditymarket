@@ -20,8 +20,8 @@
   </div>
 <% end %>
 
-<%= form_tag(forsales_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
+<%= form_tag forsales_path, method: :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+    <%= submit_tag "Search", name: nil %>
 <% end %>
 

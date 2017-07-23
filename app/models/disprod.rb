@@ -6,9 +6,5 @@ class Disprod < ApplicationRecord
                                        :medium => ["400x400#", :jpg, :png ] }
    validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
    
-   def self.search(search)
-      where("name LIKE ?", "%#{search}%") 
-      where("content LIKE ?", "%#{search}%")
-   end
 
 end

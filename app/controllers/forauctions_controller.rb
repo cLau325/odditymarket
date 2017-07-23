@@ -3,9 +3,8 @@ class ForauctionsController < ApplicationController
     before_action :find_auction, only:[:show, :edit, :update, :destroy, :newbid]
     
     def index
-        @forauction = Forauction.all.order("created_at DESC")
         if params[:search]
-            @forauction = Forauction.search(params[:search]).order("created_at DESC")
+            @forauction = Forauction.where('fa_name LIKE ?', "%#{params[:search]}%")
         else
             @forauction = Forauction.all.order('created_at DESC')
         end

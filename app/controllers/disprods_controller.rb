@@ -3,9 +3,8 @@ class DisprodsController < ApplicationController
     before_action :find_prod, only:[:show, :edit, :update, :destroy]
     
     def index
-        @disprod = Disprod.all.order("created_at DESC")
         if params[:search]
-            @disprod = Disprod.search(params[:search]).order("created_at DESC")
+            @disprod = Disprod.where('dp_name LIKE ?', "%#{params[:search]}%")
         else
             @disprod = Disprod.all.order('created_at DESC')
         end

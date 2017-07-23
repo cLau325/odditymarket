@@ -3,9 +3,8 @@ class ForsalesController < ApplicationController
     before_action :find_sale, only:[:show, :edit, :update, :destroy]
     
     def index
-        @forsale = Forsale.all.order("created_at DESC")
         if params[:search]
-            @forsale = Forsale.search(params[:search]).order("created_at DESC")
+            @forsale = Forsale.where('fs_name LIKE ?', "%#{params[:search]}%")
         else
             @forsale = Forsale.all.order('created_at DESC')
         end
