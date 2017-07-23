@@ -9,6 +9,8 @@
       <p>
       <%= i.hidden_field :cur_highest , :value => current_user.id %>
       <%= i.label :fa_baseprice, "Enter New Price" %>
+      <h3>Increment Amount: 10</h3>
+      
       <%= i.number_field :fa_baseprice, class: 'form-control',
                       min: @forauction.fa_baseprice+10, step: 10 %>
       </p>     
