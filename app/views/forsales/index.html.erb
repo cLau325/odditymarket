@@ -1,7 +1,11 @@
-<%= link_to "Upload An Art for Sale", new_forsale_path, class: "btn btn-default" %>
-
+<%= form_tag forsales_path,class:"tag",method: :get do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+<%= submit_tag "Search", name: nil %>
+<% end %>
+<%= link_to "Upload An Art for Sale", new_forsale_path, class: "btn btn-primary" %>
 <% @forsale.each_slice(3) do |i| %>
-  <div class="row">
+<html>
+  <div class="FROW">
     <% i.each do |j| %>
       <div class="col-md-4">
         <div class="salproduct">
@@ -19,9 +23,24 @@
     <% end %>
   </div>
 <% end %>
+</html>
 
-<%= form_tag forsales_path, method: :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-    <%= submit_tag "Search", name: nil %>
-<% end %>
 
+<style>
+@media screen and (min-width: 901px) {
+  .btn{margin-top:1%;margin-left:1%}
+  .FROW{font:normal 100% Arial,sans-serif;font-size:1.4rem;padding-top:5%;border-style: solid; } 
+  .disimage{width:auto;text-align:center;}
+  .h2{width:auto;text-align:center;}
+  .form-signin-heading{padding-left: 20%;}
+  .tag{position:absolute;padding-left:85%;padding-top:1%;}
+  
+}
+@media screen and (max-width: 900px) {
+  .body {font:normal 100% Arial,sans-serif;font-size:1.4rem; } 
+  .form-signin-heading{padding-left: 10%;}
+  .btn{margin-left:18%;text-align:center;margin-top:1%;margin-bottom:1%;}
+  .disimage{width:auto;text-align:center;}
+  .tag{padding-left:18%;padding-top:1%;margin-top:1%}
+}
+</style>
