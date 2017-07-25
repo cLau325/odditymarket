@@ -1,5 +1,5 @@
 class User < ApplicationRecord 
-  has_many :disprods
+  has_many :disprod
   has_many :forauctions
   has_many :forsales
   before_save { self.email = email.downcase }

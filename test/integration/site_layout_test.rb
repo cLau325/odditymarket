@@ -6,6 +6,5 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", root_path, count: 2  #确保页面中有两个指向首页的链接
     assert_select "a[href=?]", about_path 
     assert_select "a[href=?]", contact_path
-    assert_select "a[href=?]", support_path
   end 
 end

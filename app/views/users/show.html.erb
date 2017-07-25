@@ -7,6 +7,28 @@
             Name :<%= @user.name %> </br>
             ID : <%= current_user.id %>
         </h1>
+        
+        <h2>My Display Items</h2>
+        <% @disprod.each_slice(3) do |i| %>
+          <% i.each do |j| %>
+            <% if current_user.id == j.user_id %>
+              <%= link_to j do %>
+                <%= image_tag j.image.url(:small) %>
+              <%end%>
+            <%end%>
+          <%end%>
+        <%end%>
+        
+        <h2>My Sales Items</h2>
+        <% @forsale.each_slice(3) do |i| %>
+           <% i.each do |j| %>
+             <% if current_user.id == j.user_id %>
+                <%= link_to j do %>
+                 <%= image_tag j.fs_image.url(:small) %>
+                <%end%>
+              <%end%>
+          <%end%>
+        <%end%>
       </section>
     </aside>
   </div>

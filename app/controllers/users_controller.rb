@@ -1,8 +1,15 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @disprod = Disprod.includes(@disprod).order("created_at desc").limit(3).offset(0)
+    @forauction = Forauction.includes(@forauction).order("created_at desc").limit(3).offset(0)
+    @forsale = Forsale.includes(@forsale).limit(3).order("created_at desc").offset(0)
   end
-
+  
+  def index
+      @posts = current_user.posts
+   end
+   
   def new
     @user = User.new
   end

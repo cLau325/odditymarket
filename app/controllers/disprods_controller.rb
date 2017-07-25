@@ -1,6 +1,5 @@
 class DisprodsController < ApplicationController
-    
-    before_action :find_prod, only:[:show, :edit, :update, :destroy]
+        before_action :find_prod, only:[:show, :edit, :update, :destroy]
     
     def index
         if params[:search]
@@ -58,5 +57,6 @@ class DisprodsController < ApplicationController
     def find_prod
         @disprod = Disprod.find(params[:id])
     end
+    
 
 end
