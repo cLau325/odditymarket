@@ -30,7 +30,7 @@
                             <% end %>
                         <% else %>
                             <%= link_to login_path(@sessions) do %>
-                            <%= image_tag j.image.url(:small) %>
+                            <%= image_tag j.image.url(:medim) %>
                             <% end %>
                         <% end %>
                         </div><!--disimage-->
@@ -56,7 +56,7 @@
                         <div class="salimage">
                         <% if logged_in? %>
                             <%= link_to j do %>
-                            <%= image_tag j.fs_image.url(:small) %>
+                            <%= image_tag j.fs_image.url(:medim) %>
                             <% end %>
                         <% else %>
                             <%= link_to login_path(@sessions) do %>

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   
   def index
       @posts = current_user.posts
-   end
+  end
    
   def new
     @user = User.new

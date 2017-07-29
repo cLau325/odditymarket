@@ -1,6 +1,4 @@
 <% provide(:title, @user.name) %> 
-  <div class="row">
-    <aside class="col-md-4"> 
       <section class="user_info">
         <h1>
             <%= gravatar_for @user %> </br>
@@ -10,25 +8,38 @@
         
         <h2>My Display Items</h2>
         <% @disprod.each_slice(3) do |i| %>
+          <div class="row">
           <% i.each do |j| %>
-            <% if current_user.id == j.user_id %>
-              <%= link_to j do %>
-                <%= image_tag j.image.url(:small) %>
+            <div class="col-md-4">
+              <% if current_user.id == j.user_id %>
+                <div class="disimage">
+                <%= link_to j do %>
+                  <%= image_tag j.image.url(:small) %>
+                <%end%>
+                </div>
               <%end%>
-            <%end%>
+            </div>
           <%end%>
+          </div>
         <%end%>
+        
+        <br><br><br>
+        <hr>
         
         <h2>My Sales Items</h2>
         <% @forsale.each_slice(3) do |i| %>
-           <% i.each do |j| %>
-             <% if current_user.id == j.user_id %>
+          <div class="row">
+          <% i.each do |j| %>
+            <div class="col-md-4">
+              <% if current_user.id == j.user_id %>
+                <div class="salimage">
                 <%= link_to j do %>
-                 <%= image_tag j.fs_image.url(:small) %>
+                  <%= image_tag j.fs_image.url(:small) %>
                 <%end%>
+                </div>
               <%end%>
+            </div>
           <%end%>
+          </div>
         <%end%>
       </section>
-    </aside>
-  </div>
