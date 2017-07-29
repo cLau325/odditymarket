@@ -7,11 +7,18 @@
 
 <!DOCTYPE html>
 <html>
+  <div>
+  <div>
+  <%= link_to "Upload An Art for Display", new_disprod_path, class: "btn btn-primary"%>
+  </div>
   <%= form_tag disprods_path,class:"tag",method: :get do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
   <%= submit_tag "Search", name: nil %>
   <% end %>
-  <%= link_to "Upload An Art for Display", new_disprod_path, class: "btn btn-primary"%>
+  </div>  
+  
+
+  
   <% @disprod.each_slice(3) do |i| %>
     <div class="row">
       <% i.each do |j| %>
