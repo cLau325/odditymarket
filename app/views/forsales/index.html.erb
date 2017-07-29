@@ -21,9 +21,9 @@
                 <%= image_tag j.fs_image.url(:medium) %>
               <% end %>
             </div>
-            <h2 class="h2">
+            <h2 class="name_price_center">
               <%= link_to j.fs_name, j %>
-              <h4>$ <%= j.fs_price %></h4>
+              <h4 class="name_price_center">$ <%= j.fs_price %></h4>
             </h2>
           </div>
         </div>
@@ -38,7 +38,7 @@
   .btn{margin-top:1%;margin-left:1%}
   .row{font:normal 100% Arial,sans-serif;font-size:1.4rem;padding-top:5%; } 
   .salimage{width:auto;text-align:center;}
-  .h2{width:auto;text-align:center;}
+  .name_price_center{width:auto;text-align:center;}
   .form-signin-heading{padding-left: 20%;}
   .tag{position:absolute;padding-left:85%;padding-top:1%;}
 }
