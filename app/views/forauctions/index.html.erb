@@ -5,7 +5,10 @@
     </p>
   </div>
 </header>
-
+<%= form_tag forauctions_path, method: :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+    <%= submit_tag "Search", name: nil %>
+<% end %>
 <%= link_to "Upload An Art for Auction", new_forauction_path, class: "btn btn-default" %>
 
 <% @forauction.each_slice(3) do |i| %>
@@ -30,7 +33,17 @@
   </div>
 <% end %>
 
-<%= form_tag forauctions_path, method: :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-    <%= submit_tag "Search", name: nil %>
-<% end %>
+
+
+<style>
+@media screen and (min-width: 901px) {
+  .row{width:auto;text-align:center;padding-top:5%;}
+}
+
+@media screen and (max-width: 900px) {
+  .row{width:auto;text-align:center;padding-top:5%;}
+  #.h1{width:auto;text-align:center;}
+  #.item_image{margin-left:50%;}
+}
+</style>
+

@@ -6,15 +6,14 @@
   </div>
 </header>
 
-  <div>
     <div>
-      <%= link_to "Upload An Art for Sale", new_forsale_path, class: "btn btn-primary" %>
-    </div>
-  <%= form_tag forsales_path,class:"tag",method: :get do %>
+        <%= form_tag forsales_path,class:"tag",method: :get do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
   <%= submit_tag "Search", name: nil %>
   <% end %>
-  </div>
+      <%= link_to "Upload An Art for Sale", new_forsale_path, class: "btn btn-primary" %>
+    </div>
+
   
   <% @forsale.each_slice(3) do |i| %>
     <div class="row">
@@ -40,12 +39,12 @@
 
 <style type="text/css">
 @media screen and (min-width: 901px) {
-  .btn{margin-top:1%;margin-left:1%}
+  .btn{margin-left:1%;}
   .row{font:normal 100% Arial,sans-serif;font-size:1.4rem;padding-top:5%; } 
   .salimage{width:auto;text-align:center;}
   .name_price_center{width:auto;text-align:center;}
   .form-signin-heading{padding-left: 20%;}
-  .tag{position:absolute;padding-left:85%;padding-top:1%;}
+  .tag{position:absolute;padding-left:85%;padding-bottom:1%;}
 }
   
 @media screen and (max-width: 900px) {
