@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <header id ="subpageHeader" class="jumbotron text-white">
   <div class="container">
     <h1 class="jumbotron-heading">Auction</h1>
@@ -10,29 +11,63 @@
     <%= submit_tag "Search", name: nil %>
 <% end %>
 <%= link_to "Upload An Art for Auction", new_forauction_path, class: "btn btn-default" %>
+=======
+ <br>
+    <div class="container">
+      
+      <div class="row row-offcanvas row-offcanvas-right">
 
-<% @forauction.each_slice(3) do |i| %>
-  <div class="row">
-    <% i.each do |j| %>
-      <div class="col-md-4">
-        <div class="aucproduct">
-          <div class="aucimage">
-            <%= link_to j do %>
-              <%= image_tag j.fa_image.url(:medium) %>
-            <% end %>
+        <div class="col-12 col-md-9">
+          <!--<p class="float-right hidden-md-up">-->
+          <!--  <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>-->
+          <!--</p>-->
+          <div class="jumbotron text-white" id="subpageHeader">
+            <h1>Auction</h1>
+            <p>put some text here</p>
+            <div>
+              <%= link_to "Upload An Art for Auction", new_forauction_path, class: "btn btn-primary",style:"display:inline-block; margin-right:5%" %>
+              <%= form_tag forauctions_path,style:"display:inline-block", method: :get do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search...", style:"display:inline-block" %>
+                <%= submit_tag "Search", name: nil , style:"display:inline-block"%>
+              <% end %>
+            </div>            
           </div>
-          <h2>
-            <%= link_to j.fa_name, j %>
-          </h2>
-          <h4>
-            $ <%= j.fa_baseprice %>
-          </h4>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+          
+          <% @forauction.each_slice(3) do |i| %>
+          <div class="row">
+            <% i.each do |j| %>
+            <div class="col-6 col-lg-4">
+              <%= link_to j do %>
+                <%= image_tag j.fa_image.url(:medium),class:"itemImage"%>
+              <% end %>
+              <p class="itemName" ><%= link_to j.fa_name, j %></p>
+>>>>>>> b24bbdb5869458ea5a58fa92b3c5a25820cad158
 
+              <p class="itemPrice">$ <%= j.fa_baseprice %></p>
+              <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
+            </div><!--/span-->
+            <% end %>
+          </div><!--/row-->
+          <% end %>
+          
+        </div><!--/span-->
+
+        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">CATEGORY</a>
+            <a href="#" class="list-group-item">Category1</a>
+            <a href="#" class="list-group-item">Category2</a>
+            <a href="#" class="list-group-item">Category3</a>
+            <a href="#" class="list-group-item">Category4</a>
+            <a href="#" class="list-group-item">Category5</a>
+            <a href="#" class="list-group-item">Category6</a>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+</div>
+
+<<<<<<< HEAD
 
 
 <style>
@@ -47,3 +82,5 @@
 }
 </style>
 
+=======
+>>>>>>> b24bbdb5869458ea5a58fa92b3c5a25820cad158
