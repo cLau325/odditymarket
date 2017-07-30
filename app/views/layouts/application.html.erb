@@ -27,8 +27,7 @@
       <div class="collapse navbar-collapse justify-content-end " id="mainNav">
         <div class="navbar-nav">
           <%= link_to "Home", root_path, class: 'nav-item nav-link'%>
-          <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>
-          <%= link_to "Contact", contact_path,  class: 'nav-item nav-link '%>
+         
           
           <% if logged_in? %>
           <%= link_to "Display", display_path,  class: 'nav-item nav-link '%>
@@ -39,6 +38,8 @@
           <%= link_to "Sale", login_path ,  class: 'nav-item nav-link '%>  
           <%= link_to "Auction", login_path ,  class: 'nav-item nav-link '%>  
           <% end %>
+          <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>
+          <%= link_to "Contact", contact_path,  class: 'nav-item nav-link '%>
           
           <% if logged_in? %>
           <!--<%= link_to "Users", '#', class: 'nav-item nav-link ',style:'color:white'%>-->
@@ -53,6 +54,7 @@
       </div><!--collapse-->
     </nav>
     
+
     <%= yield %>
     <br><br><br><br>
     

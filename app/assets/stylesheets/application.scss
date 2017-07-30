@@ -44,3 +44,17 @@
   min-width: 100%;
   height: 32rem;
 }
+
+.itemImage{
+    height:250px;
+    width:250px;
+    margin-bottom:15px;
+    margin-top:10px;
+}
+.itemName{
+    display:inline-block;
+    color:black;
+    padding-left:115px;
+    // background:red;
+    text-align:center;
+}
