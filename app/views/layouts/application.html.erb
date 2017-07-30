@@ -26,19 +26,9 @@
     
       <div class="collapse navbar-collapse justify-content-end " id="mainNav">
         <div class="navbar-nav">
-          <%= link_to( "Home", root_path, class: 'nav-item nav-link')%>-->
-          <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>-->
+          <%= link_to "Home", root_path, class: 'nav-item nav-link'%>
+          <%= link_to "About", about_path,  class: 'nav-item nav-link ' %>
           <%= link_to "Contact", contact_path,  class: 'nav-item nav-link '%>
-          <%= link_to "Sign Up", signup_path,  class: 'nav-item nav-link '%>
-          
-          <% if logged_in? %>
-          <%= link_to "Users", '#', class: 'nav-item nav-link '%>
-          <%= link_to "Profile", current_user, class: 'nav-item nav-link '%>
-          <%= link_to "Log out", logout_path, method: "delete" , class: 'nav-item nav-link '%>
-          <% else %>
-          <%= link_to "Log in", login_path ,  class: 'nav-item nav-link '%>   
-          <% end %>
-          
           
           <% if logged_in? %>
           <%= link_to "Display", display_path,  class: 'nav-item nav-link '%>
@@ -48,6 +38,15 @@
           <%= link_to "Display", login_path ,  class: 'nav-item nav-link '%>  
           <%= link_to "Sale", login_path ,  class: 'nav-item nav-link '%>  
           <%= link_to "Auction", login_path ,  class: 'nav-item nav-link '%>  
+          <% end %>
+          
+          <% if logged_in? %>
+          <!--<%= link_to "Users", '#', class: 'nav-item nav-link ',style:'color:white'%>-->
+          <%= link_to "Profile", current_user, class: 'nav-item nav-link ',style:'color:white'%>
+          <%= link_to "Log out", logout_path, method: "delete" , class: 'nav-item nav-link ',style:'color:white'%>
+          <% else %>
+          <%= link_to "Log in", login_path ,  class: 'nav-item nav-link ',style:'color:white'%>   
+          <%= link_to "Sign Up", signup_path,  class: 'nav-item nav-link ',style:'color:white'%>
           <% end %>
           
         </div><!--navbar-nav-->

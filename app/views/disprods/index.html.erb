@@ -5,39 +5,138 @@
 <script src=”http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js”></script>
 <![endif]–>
 
-<!DOCTYPE html>
-<html>
-  <div>
-    <div>
-      <%= link_to "Upload An Art for Display", new_disprod_path, class: "btn btn-primary"%>
-    </div>
-  <%= form_tag disprods_path,class:"tag",method: :get do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-  <%= submit_tag "Search", name: nil %>
-  <% end %>
-  </div>  
-  
 
+<header id ="subpageHeader" class="jumbotron text-white">
+  <div class="container">
+    <h1 class="jumbotron-heading">Display</h1>
+    <p class="lead text-white">Some Text</p>
+    </p>
+  </div>
+</header>
+
+<section id="home">
+    <div class="container">
+        <div id="home-header">
+            <h2>Recent Display</h2>
+            <!--<p class="lead">title 1 description</p>-->
+            <hr>
+        </div><!--home-header-->    
+            <% @disprod.each_slice(3) do |i| %>
+            <div class="row">
+                <% i.each do |j| %>
+                <div class="col-md-4">
+                    <div class="disproduct">
+                        <div class="disimage">
+                        <% if logged_in? %>
+                            <%= link_to j do %>
+                            <%= image_tag j.image.url(:small) %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to login_path(@sessions) do %>
+                            <%= image_tag j.image.url(:small) %>
+                            <% end %>
+                        <% end %>
+                        </div><!--disimage-->
+                    <h4> <%= j.dp_name %> </h4>
+                    </div><!--disproduct-->
+                </div><!--col-md-4-->
+                <% end %>
+            </div><!--row-->
+            <% end %>
+        
+    <br><br><br><br><br>
+        
+        <div id="home-header">
+            <h2>Recent Sale</h2>
+            <!--<p class="lead">title 2 description</p>-->
+            <hr>
+        </div><!--home-header-->   
+            <% @forsale.each_slice(3) do |i| %>
+            <div class="row">
+                <% i.each do |j| %>
+                <div class="col-md-4">
+                    <div class="salproduct">
+                        <div class="salimage">
+                        <% if logged_in? %>
+                            <%= link_to j do %>
+                            <%= image_tag j.fs_image.url(:small) %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to login_path(@sessions) do %>
+                            <%= image_tag j.fs_image.url(:small) %>
+                            <% end %>
+                        <% end %>
+                        </div><!--salimage-->
+                    <h4><%= j.fs_name %> </h4>
+                    <h4>$ <%= j.fs_price %></h4>
+                    </div><!--salproduct-->
+                </div><!--col-md-4-->
+                <% end %>
+            </div><!--row-->
+            <% end %>
+        
+    <br><br><br><br><br>
+    
+        <div id="home-header">
+            <h2>Recent Auction</h2>
+            <!--<p class="lead">title 3 description</p>-->
+            <hr>
+        </div><!--home-header-->   
+            <% @forauction.each_slice(3) do |i| %>
+            <div class="row">
+                <% i.each do |j| %>
+                <div class="col-md-4">
+                    <div class="aucproduct">
+                        <div class="aucimage">
+                        <% if logged_in? %>
+                            <%= link_to j do %>
+                            <%= image_tag j.fa_image.url(:small) %>
+                            <% end %>
+                        <% else %>
+                            <%= link_to login_path(@sessions) do %>
+                            <%= image_tag j.fa_image.url(:small) %>
+                            <% end %>
+                        <% end %>
+                        </div><!--aucimage-->
+                    <h4> <%= j.fa_name %> </h4>
+                    <h4>$ <%= j.fa_baseprice %></h4>
+                    </div><!--aucproduct-->
+                </div><!--col-md-4-->
+                <% end %>
+            </div><!--row-->
+            <% end %>
+    </div><!--container-->
+</section><!--departent-->
+<div>
+<div>
+<%= link_to "Upload An Art for Display", new_disprod_path, class: "btn btn-primary"%>
+</div>
+<%= form_tag disprods_path,class:"tag",method: :get do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+<%= submit_tag "Search", name: nil %>
+<% end %>
+</div>  
   
-  <% @disprod.each_slice(3) do |i| %>
-    <div class="row">
-      <% i.each do |j| %>
-        <div class="col-md-4">
-          <div class="disproduct">
-            <div class="disimage">
-              <%= link_to j do %>
-                <%= image_tag j.image.url(:medium) %>
-              <% end %>
-            </div>
-            <h2 class="h2">
-              <%= link_to j.dp_name, j %>
-            </h2>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</html>
+  
+<% @disprod.each_slice(3) do |i| %>
+<div class="row">
+<% i.each do |j| %>
+<div class="col-md-4">
+<div class="disproduct">
+<div class="disimage">
+<%= link_to j do %>
+<%= image_tag j.image.url(:medium) %>
+<% end %>
+</div>
+<h2 class="h2">
+<%= link_to j.dp_name, j %>
+</h2>
+</div>
+</div>
+<% end %>
+</div>
+<% end %>
+
 
 
 
