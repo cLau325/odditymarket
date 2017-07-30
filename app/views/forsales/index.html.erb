@@ -1,58 +1,54 @@
-<header id ="subpageHeader" class="jumbotron text-white">
-  <div class="container">
-    <h1 class="jumbotron-heading">Sale</h1>
-    <p class="lead text-white">Some Text</p>
-    </p>
-  </div>
-</header>
+ <br>
+    <div class="container">
+      
+      <div class="row row-offcanvas row-offcanvas-right">
 
-  <div>
-    <div>
-      <%= link_to "Upload An Art for Sale", new_forsale_path, class: "btn btn-primary" %>
-    </div>
-  <%= form_tag forsales_path,class:"tag",method: :get do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-  <%= submit_tag "Search", name: nil %>
-  <% end %>
-  </div>
-  
-  <% @forsale.each_slice(3) do |i| %>
-    <div class="row">
-      <% i.each do |j| %>
-        <div class="col-md-4">
-          <div class="salproduct">
-            <div class="salimage">
-              <%= link_to j do %>
-                <%= image_tag j.fs_image.url(:medium) %>
-              <% end %>
-            </div>
-            <h2 class="name_price_center">
-              <%= link_to j.fs_name, j %>
-              <h4 class="name_price_center">$ <%= j.fs_price %></h4>
-            </h2>
+        <div class="col-12 col-md-9">
+          <!--<p class="float-right hidden-md-up">-->
+          <!--  <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>-->
+          <!--</p>-->
+          <div class="jumbotron text-white" id="subpageHeader">
+            <h1>Sale</h1>
+            <p>put some text here</p>
+            <div>
+              <%= link_to "Upload An Art for Sale", new_forsale_path, class: "btn btn-primary",style:"display:inline-block; margin-right:5%" %>
+                <%= form_tag forsales_path,class:"tag",style:"display:inline-block",method: :get do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search...",style:"display:inline-block"  %>
+                  <%= submit_tag "Search", name: nil,style:"display:inline-block"  %>
+                <% end %>
+            </div>            
           </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</html>
+          
+          <% @forsale.each_slice(3) do |i| %>
+          <div class="row">
+            <% i.each do |j| %>
+            <div class="col-6 col-lg-4">
+              <%= link_to j do %>
+                <%= image_tag j.fs_image.url(:medium), class:"itemImage" %>
+              <% end %>
+              <p class="itemName"><%= link_to j.fs_name, j %></p>
+              <p class="itemPrice">$ <%= j.fs_price %></p>
+
+            </div><!--/span-->
+            <% end %>
+          </div><!--/row-->
+          <% end %>
+          
+        </div><!--/span-->
+
+        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">CATEGORY</a>
+            <a href="#" class="list-group-item">Category1</a>
+            <a href="#" class="list-group-item">Category2</a>
+            <a href="#" class="list-group-item">Category3</a>
+            <a href="#" class="list-group-item">Category4</a>
+            <a href="#" class="list-group-item">Category5</a>
+            <a href="#" class="list-group-item">Category6</a>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+</div>
 
 
-<style type="text/css">
-@media screen and (min-width: 901px) {
-  .btn{margin-top:1%;margin-left:1%}
-  .row{font:normal 100% Arial,sans-serif;font-size:1.4rem;padding-top:5%; } 
-  .salimage{width:auto;text-align:center;}
-  .name_price_center{width:auto;text-align:center;}
-  .form-signin-heading{padding-left: 20%;}
-  .tag{position:absolute;padding-left:85%;padding-top:1%;}
-}
-  
-@media screen and (max-width: 900px) {
-  .body {font:normal 100% Arial,sans-serif;font-size:1.4rem; } 
-  .form-signin-heading{padding-left: 10%;}
-  .btn{margin-left:18%;text-align:center;margin-top:1%;margin-bottom:1%;}
-  .salimage{width:auto;text-align:center;}
-  .tag{padding-left:18%;padding-top:1%;margin-top:1%}
-}
-</style>
