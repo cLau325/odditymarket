@@ -1,9 +1,10 @@
-<div class="New Product Form">
+
+<div class="New">
 
 <%= form_for @disprod do |i| %>
   <%= render "disprods/error_messages" %>
 
-  <div class="panel-body">
+  <div class="panel">
       <p>
       <%= i.hidden_field :user_id , :value => current_user.id %>
       <p>
@@ -28,3 +29,15 @@
 <% end %>
 
 </div>
+
+
+<style>
+@media screen and (min-width: 901px) {
+  .New{margin-left:30%;margin-right:30%;}
+  
+}
+
+@media screen and (max-width: 900px) {
+  .New{margin-left:20%;margin-right:20%;}
+}
+</style>
