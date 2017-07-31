@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-<header id ="subpageHeader" class="jumbotron text-white">
-  <div class="container">
-    <h1 class="jumbotron-heading">Auction</h1>
-    <p class="lead text-white">Some Text</p>
-    </p>
-  </div>
-</header>
-<%= form_tag forauctions_path, method: :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
-    <%= submit_tag "Search", name: nil %>
-<% end %>
-<%= link_to "Upload An Art for Auction", new_forauction_path, class: "btn btn-default" %>
-=======
+
  <br>
     <div class="container">
       
@@ -41,7 +28,6 @@
                 <%= image_tag j.fa_image.url(:medium),class:"itemImage"%>
               <% end %>
               <p class="itemName" ><%= link_to j.fa_name, j %></p>
->>>>>>> b24bbdb5869458ea5a58fa92b3c5a25820cad158
 
               <p class="itemPrice">$ <%= j.fa_baseprice %></p>
               <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>-->
@@ -67,7 +53,6 @@
 
 </div>
 
-<<<<<<< HEAD
 
 
 <style>
@@ -82,5 +67,3 @@
 }
 </style>
 
-=======
->>>>>>> b24bbdb5869458ea5a58fa92b3c5a25820cad158
