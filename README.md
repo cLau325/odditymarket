@@ -1,4 +1,4 @@
-# README
+# Student ID
 
 301270671 Mingda Yang (Alex)
 301220487 Hiu Ching Lau (Canny)
@@ -8,6 +8,34 @@
 
 # Name of project: Oddity-market
  
-Nowadays, online shopping has become a huge part of our life. Applications such as Amazon and eBay has gone viral. Our team sees the opportunity in making the artistic collection an affordable leisure. The Oddity-Market is an application which offers an online platform for people to share or sell their collections or creative works. It is a system in which combined Amazon’s sales function and eBay’s auction function. Although it is much like eBay, our application is targeted only on to artistic works such as painting or photograph, giving the users an easier way to find what they want. Compare to eBay, our application differentiates in its targeted audience; the application is a specialized platform for artistic merchandise, providing users direct access to purchase artwork. As a team, we firmly believed that auctions are not only for the upper class, but it should be an affordable activity for all general people. Despite the fact that most auction is expected to focus on the rich’s, we have decided to target on anyone who appreciates arts despite their background. The Oddity market is an application that not only provides a friendly way for designers and collectors to communicate and share their artworks but also it is a sales platform for users to purchase their favorite artworks. Our product is suitable for two primary type of people, people who are seeking for artworks or collections that are worthy of recognition or individuals who are seeking for an audience to appreciate their work. Our goal is to help local original designers to display their works in a worldwide market and help collectors to find suitable artworks to add to their collection. Furthermore, we wish to give everyone a convenient way to meditate through arts, to escape from this busy world and relax.
+The Oddity-Market is a website, it offers an online platform for people to share or sell their collections or creative works. The platform is a system in which combined Amazon’s sales function and eBay’s auction function, it focus on artistic works such as painting or photograph, giving the users an easier way to find what they want. 
+
+Comparing to eBay, our website differentiates in its targeted audience; The website is a specialized platform for artistic merchandise.  It provide users direct access to purchase artwork, it not only provides a way for designers and collectors to communicate and share their artworks, but also it is a sales platform for users to purchase their artworks. 
+
+## Our product is suitable for two primary type of people
+ (1)People who are seeking for artworks or collections that are worthy of recognition.
  
-Our project will consist three main individual features: artwork display, artwork selling, and auction. Artwork display is the place for users to share their artworks and communicate about their thought. Artwork sale is the place for users to sell or buy a product that has a fixed price. The auction is the place for buyers to bid artwork that they loved. As the admin of our site, we have the responsibility to monitor the user's status and track their logs, if any inappropriate items were displayed or trying to sell, we have the control and the right to remove the item from our site. On the other hand, for user’s, we have separated them into three fundamental categories: Buyers, Sellers, and Viewers.For buyers and sellers, register an account is necessary while for viewers it will be optional. The Buyers have the rights to comment under selected art display or under the product, report any unusual actions or inappropriate art show, product or comments and purchase selected product through auction. The seller has the rights to remove or add a product, modification of the description of the product and set the reserve price and the bid increment.
+ (2)Individuals who are seeking for an audience to appreciate their work. 
+
+## Goal
+
+Our goal is to help designers to display their works in a worldwide market, and help collectors to find suitable artworks to add to their collection. We wish to give a way to meditate through arts, to escape from this busy world and relax.
+ 
+## Our project will consist three main individual features
+
+### (1)Artwork display 
+Artwork display is the place for users to share their artworks and communicate about their thought. 
+### (2)Artwork selling
+Artwork sale is the place for users to sell or buy a product that has a fixed price. 
+### (3)Auction
+The auction is the place for buyers to bid artwork that they loved. 
+
+As the admin of the site, we have the responsibility to monitor the user's status and track their logs, if any inappropriate items were displayed or trying to sell, we can control and remove the item from our site. 
+
+## For user’s
+We have separated them into three fundamental categories: Buyers, Sellers, and Viewers.
+
+## For buyers and sellers
+The Buyers have the rights to comment under selected art display or under the product, report unusual actions or inappropriate art show, product or comments and purchase selected product through auction. 
+
+The seller has the rights to remove or add a product, modification of the description of the product and set the reserve price and the bid increment.
